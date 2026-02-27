@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    container_name: edufya-llm-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - /app/venv # Prevent local venv from being overwritten
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped

@@ -12,6 +12,7 @@ EdufyaLLM is a custom-trained, small-scale Large Language Model (LLM) designed s
 - **LaTeX Math Output**: Generates clean mathematical notation (e.g., $x^2 + y^2 = z^2$).
 - **Speed Optimized (Mac)**: Uses **MPS (Metal Performance Shaders)** and `float16` precision for fast inference on Mac GPU hardware.
 - **End-to-End Pipeline**: Includes tools for web scraping, data preprocessing, and model fine-tuning.
+- **Docker Enabled**: Production-ready containerization for easy cloud deployment.
 
 ---
 
@@ -66,3 +67,17 @@ curl -X POST "http://localhost:8000/train" \
      -H "Content-Type: application/json" \
      -d '{"url": "https://example.com/math-lesson", "num_epochs": 1}'
 ```
+
+---
+
+## 🐳 Docker Deployment
+
+To run the API in a containerized environment:
+
+```bash
+docker compose up --build
+```
+
+The API will be available at `http://localhost:8000`.
+
+The API will be available at `http://localhost:8000`.
