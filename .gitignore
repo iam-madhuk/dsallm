@@ -1,0 +1,19 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.env
+
+# Data and Models
+data/
+models/
+*.jsonl
+*.txt
+*.db
+
+# OS files
+.DS_Store
