@@ -1,8 +1,10 @@
 import os
 # Enable MPS for Mac acceleration
 os.environ["PYTORCH_ENABLE_MPS_FALLBACK"] = "1"
-
 import torch
+# Optimize CPU performance
+if not torch.backends.mps.is_available():
+    torch.set_num_threads(min(os.cpu_count(), 4))
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -129,9 +131,10 @@ async def chat(request: ChatRequest):
         output_tokens = model.generate(
             **inputs,
             max_new_tokens=request.max_tokens,
-            do_sample=True,
-            temperature=request.temperature,
-            pad_token_id=tokenizer.eos_token_id
+            do_sample=request.temperature > 0,
+            temperature=request.temperature if request.temperature > 0 else 1.0,
+            pad_token_id=tokenizer.eos_token_id,
+            use_cache=True
         )
     
     end_time = time.time()

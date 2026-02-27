@@ -23,8 +23,8 @@ class VectorDB:
         )
         print(f"Added {len(documents)} documents to Vector DB.")
 
-    def query(self, query_text, n_results=3):
-        """Query the vector database for relevant context."""
+    def query(self, query_text, n_results=2):
+        """Query the vector database for relevant context (Faster with 2 results)."""
         results = self.collection.query(
             query_texts=[query_text],
             n_results=n_results
