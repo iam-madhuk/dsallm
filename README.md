@@ -146,3 +146,6 @@ To run the Dsa LLM in a containerized environment:
 ```bash
 docker compose up --build
 ```
+
+Credits: Gaurav Patel
+
