@@ -4,7 +4,19 @@ Dsa LLM is a custom-trained, small-scale Large Language Model (LLM) designed spe
 
 ---
 
-## 🚀 Key Features
+## � About the Project
+
+**Dsa LLM** was born from the need for a focused, private, and high-performance coding tutor. While general-purpose LLMs are great, they often lack the deep algorithmic rigor required for technical interviews or specialized competitive programming.
+
+This project focuses on:
+- **Technical Rigor**: Providing not just code, but optimal approaches and complexity analysis.
+- **Privacy-First**: No data leaves your machine. Inference and training happen locally.
+- **Accessibility**: Using ultra-efficient 0.5B parameter models that run smoothly on average CPUs and Mac Silicon (MPS).
+- **Customizability**: A built-in scraping and training pipeline allows anyone to "feed" the AI their own notes or curriculum.
+
+---
+
+## �🚀 Key Features
 
 - **Algorithm Expert**: Built to be a Technical Interviewer, providing optimal code, approach explanations, and complexity analysis.
 - **Contextual Memory (RAG)**: Uses **ChromaDB** with a specific `dsa_content` collection to store and retrieve algorithmic patterns.
